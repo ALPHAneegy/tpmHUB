@@ -108,21 +108,19 @@ local CONFIG = {
 		{ name = "Tiny Rock", durability = 0 },
 	},
 	Machines = {
-		{ section = "Industrial Machines", label = "Industrial Bar Lift", object = "Industrial Bar Lift", fallback = CFrame.new(-5492.7051, 82.9405, 4643.6421) },
+		{ section = "Overcharged Gym Machines", label = "Overcharged Bar Lift", object = "Overcharged Bar Lift", fallback = CFrame.new(-3016.02, 153.94, 4707.43) },
+		{ section = "Overcharged Gym Machines", label = "Overcharged Squat", object = "Overcharged Squat", fallback = CFrame.new(-2802.79, 164.94, 5477.40) },
+		{ section = "Overcharged Gym Machines", label = "Overcharged Bench", object = "Overcharged Bench", fallback = CFrame.new(-2399.94, 197.42, 4522.49) },
+
+		{ section = "Industrial Machines", label = "Industrial Bar Lift", object = "Industrial Bar Lift", fallback = CFrame.new(-3016.02, 153.94, 4707.43) },
 		{ section = "Industrial Machines", label = "Industrial Bench", object = "Industrial Bench", fallback = CFrame.new(-5014.7197, 101.4016, 4467.3472) },
 		{ section = "Industrial Machines", label = "Industrial Boulder", object = "Industrial Boulder", fallback = CFrame.new(-5456.4297, 85.4802, 5231.5352) },
 		{ section = "Industrial Machines", label = "Industrial Squat", object = "Industrial Squat", fallback = CFrame.new(-5422.1152, 76.9691, 5443.0771) },
 
-		{ section = "Jungle Gym Machines", label = "Jungle Bar Lift", object = "Jungle Bar Lift", fallback = CFrame.new(-8652.8672, 29.2667, 2089.2617) },
+		{ section = "Jungle Gym Machines", label = "Jungle Bar Lift", object = "Overcharged Bar Lift", fallback = CFrame.new(-8174.8818, 47.7279, 1912.9667) },
 		{ section = "Jungle Gym Machines", label = "Jungle Bench", object = "Jungle Bench", fallback = CFrame.new(-8174.8818, 47.7279, 1912.9667) },
 		{ section = "Jungle Gym Machines", label = "Jungle Boulder", object = "Jungle Boulder", fallback = CFrame.new(-8616.5918, 31.8064, 2677.1548) },
 		{ section = "Jungle Gym Machines", label = "Jungle Squat", object = "Jungle Squat", fallback = CFrame.new(-8377.2773, 34.8563, 2863.6965) },
-
-		{ section = "Legends Gym Machines", label = "Legends Lift", object = "Legends Lift", fallback = CFrame.new(4532.2178, 1012.4910, -4002.7122) },
-		{ section = "Legends Gym Machines", label = "Legends Press", object = "Legends Press", fallback = CFrame.new(4109.9131, 1012.2094, -3802.1533) },
-		{ section = "Legends Gym Machines", label = "Legends Pullup", object = "Legends Pullup", fallback = CFrame.new(4510.2075, 999.8143, -3636.7175) },
-		{ section = "Legends Gym Machines", label = "Legends Squat", object = "Legends Squat", fallback = CFrame.new(4439.7734, 1008.0662, -4058.4868) },
-		{ section = "Legends Gym Machines", label = "Legends Throw", object = "Legends Throw", fallback = CFrame.new(4189.9614, 1004.3785, -3903.0166) },
 
 		{ section = "Muscle King Machines", label = "Muscle King Lift", object = "Muscle King Lift", fallback = CFrame.new(-8772.9707, 39.1910, -5663.5625) },
 		{ section = "Muscle King Machines", label = "Muscle King Bench", object = "Muscle King Bench", fallback = CFrame.new(-8590.2354, 37.7592, -6044.5952) },
@@ -141,26 +139,13 @@ local CONFIG = {
 	},
 	FullTrainMachines = {},
 	Teleports = {
-		{
-			"Rip Glitch Pets",
-			Vector3.new(-499.3, 3.15, -204.61),
-			lookAt = Vector3.new(-507.07, 3.15, -204.61),
-			utility = true,
-		},
+		{ "Overcharged Gym", Vector3.new(-1861.95, 181.40, 4993.50) },
 		{ "Industrial Gym", Vector3.new(-5165, 57, 4945) },
 		{ "Jungle Gym", Vector3.new(-7894, 6, 2386) },
 		{ "Muscle King", Vector3.new(-8799, 17, -5798) },
 		{ "Legends Gym", Vector3.new(4429, 991, -3880) },
-		{ "Eternal Gym", Vector3.new(-6768, 7, -1287) },
-		{ "Mythical Gym", Vector3.new(2255, 7, 1071) },
-		{ "Frost Gym", Vector3.new(-2650, 7, -393) },
-		{ "Tiny Gym", Vector3.new(50, 7, 1918) },
 		{ "Beach", Vector3.new(9, 7, 100) },
-		{ "Boss Arena", Vector3.new(0, 5, -805) },
-		{ "Boss Battle", Vector3.new(0, 18, -1080) },
 		{ "Secret Area", Vector3.new(1947, 2, 6191) },
-		{ "Desert Brawl", Vector3.new(960, 17, -7398) },
-		{ "Lava Brawl", Vector3.new(4471, 119, -8836) },
 	},
 	UniqueAuras = {
 		"Muscle King", "Entropic Blast",
@@ -168,6 +153,7 @@ local CONFIG = {
 	UniquePets = {
 		"Core Pup", "Volt Talon", "Reactor Beast",
 		"Plasma Ravager", "Titan Reactor", "Apex Overlord",
+		"Nova Phoenix", "Shard Dragon", "Surge Tiger",
 		"Neon Guardian", "Cybernetic Showdown Dragon", "Darkstar Hunter",
 		"Muscle Sensei", "Infernal Dragon", "Aether Spirit Bunny",
 		"Magic Butterfly", "Ultra Birdie",
@@ -15845,6 +15831,7 @@ local function currentShopRemote()
 	return (events and events:FindFirstChild("cPetShopRemote"))
 		or ReplicatedStorage:FindFirstChild("cPetShopRemote")
 end
+
 
 local shopZonePriority = {
 	["Core Pup"] = 70, ["Volt Talon"] = 70, ["Reactor Beast"] = 70,
